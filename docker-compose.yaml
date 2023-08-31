@@ -1,0 +1,14 @@
+version: "3.0"
+
+services:
+    service-discovery:
+        container_name: rednet-service-discovery
+        build: ./service-discovery
+        ports:
+            - "8761:8761"
+        restart: unless-stopped
+        networks:
+            - rednet-network
+networks:
+    rednet-network:
+        external: true
